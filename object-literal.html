@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Literal</title>
+</head>
+<body>
+    <script>
+        console.log("웹브라우저 개발자도구 콘솔 출력 예시코드입니다.");
+        
+        //객제 구조 정의 및 사용 예시
+        let noteBook = {
+            productId: "1",
+            productName: "LG그램17",
+            price: 1000,
+            brand: "LG전자"
+        };
+
+        console.log("노트북정보:", noteBook);
+        //객체 특성 속성값 변경
+        noteBook.price = 2000;
+        //객체의 기존 정의된 속성값은 변경가능하나 객체 자체의 구조는 변경 불가능
+        console.log("노트북정보:", noteBook);
+
+
+        //ECMAScript 객체 리터럴의 동적속성 추가 기능을 이용해 한번정의된 객체의 구조를 동적으로 변경
+        
+        //noteBook 객체 새로운 재고속성을 동적으로 추가 및 기본값 할당
+        //동적속성 정의 규칙 : 객체변수/상수["동적속성명"] = 동적속성할당값;
+        noteBook["stock"] = 200;
+
+        //noteBook 객체에 stock속성이 추가된것을 확인
+        console.log("노트북정보:", noteBook);
+
+        //좀더 쉬운 동적속성 추가 문법
+        //기존 객체변수에 .신규속성명 = 신규속성값;
+        noteBook.spec = { CPU: "i7", Memory: "16G", SSD: "512G" };
+
+        console.log("노트북정보:", noteBook);
+
+        //noteBook 객체에 추가속성을 프로그래밍방식으로 정의가능
+        //다시 한번 체크 필요
+        var SalesCenter = "Center";
+        for(let i = 0;i < 10; i++){
+            noteBook[`${SalesCenter}-${i.toString()}`] = 20;
+        }
+
+        console.log("노트북정보:", noteBook);
+    </script>
+</body>
+</html>
