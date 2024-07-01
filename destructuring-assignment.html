@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열/객체 비구조화(구조분해) 할당 문법</h1>
+    <script>
+        const books = ['React','Vue','Angular','Svelt','Jquery'];
+        var book1 = books[0];
+        var book2 = books[1];
+        var book3 = books[2];
+        console.log("기본 배열 출력한 값:", books);
+
+        console.log("기본방식으로 배열에서 추출한 값:", book1, book2, book3);
+
+        let [book01, book02, book03] = books;
+        console.log("비구조화 할당방식으로 기존 배열에서 추출한 값:", book01, book02,book03);
+
+        const [book4, book5] = books;
+        console.log("비구조화 할당방식으로 배열에서 추출한 값", book4, book5);
+
+        let [book6, ...extraBooks] = ['자바', '닷넷', '파이썬', 'PHP', '노드'];
+        console.log("비구조화 할당방식으로 배열에서 나머지 값 배열로 추출하기:", book6, extraBooks);
+
+        const [book7, book8, book9, book10, book11, book12 = '데이터베이스'] = ['자바', '닷넷', '파이썬', 'PHP', '노드'];
+        console.log("비구조화 할당방식의 배열값 상수출력예시3 :", book7, book8, book9, book10, book11, book12);
+    </script>
+</body>
+</html>
