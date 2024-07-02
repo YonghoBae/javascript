@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트-디버깅</title>
+</head>
+<body>
+    
+    <h1>회원가입</h1>
+    이름: <span id="name"></span>
+
+    <script>
+
+        var firstName = "창훈";
+        var lastName = "강";
+
+        //첫번째 디버깅 구간
+        //여기서 강제 디버깅 시작-웹 브라우저 코드 실행중단
+        //직접 스크립트 코드 영역에 debugger;예약어를 통해 개발자도구를 통한 디버깅이 가능 but 비추천 방식
+        //되도록 개발자도구 Sources탭에서 디버거설정을 통한 두번째 방식 사용을 권장
+        debugger;
+
+        //콘솔에 다중값 로깅출력
+        console.log("성명:", lastName, firstName);
+        var fullName1 = firstName + " " + lastName;
+        console.log("풀네임 출력", fullName1);
+
+        //풀네임 span 태그에 출력
+        var nameElement = document.getElementById("name");
+        nameElement.innerText = fullName1;
+
+
+        //두번쨰 디버깅 구간
+        debugger;
+
+        //에러 발생 구간 console.error 출력
+
+        try {
+            var fullName2 = firstName + " " + LastName;
+        } catch (error) {
+            console.error("에러발생: ", error);
+        }
+
+    </script>
+
+</body>
+</html>
