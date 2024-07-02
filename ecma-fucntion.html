@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMAScript_Fucntion</title>
+</head>
+<body>
+
+    <script>
+        console.log("웹브라우저 개발자도구 콘솔 출력 예시코드입니다.");
+
+        //함수정의case1: 전통적인 자바스크립트 함수(기능) 정의 방식=명명함수정의방식,함수명정의방식 
+        //함수의 사용목적: 코드의 재사용성 제공
+        //funciton 함수명(입력 파라메터=매개변수){ 처리로직 구현 return 반환구문 }
+        function fnPlus(a, b) {
+            let c = a + b;
+            return c;
+        };
+
+        var result = fnPlus(1, 2);
+        console.log("명명 함수 정의 방식:", result);
+
+
+        //명명함수 표현식 방식 : 명명함수를 변수에 할당해서 사용하는방식
+        var plus0 = function fnPlus(a, b) {
+            let c = a + b;
+            return c;
+        };
+
+        var result0 = plus0(1, 2);
+        console.log("명명 함수 표현  방식:", result0);
+
+
+        //함수정의 case2: 익명함수표방식= 함수명없이 함수를 정의하고 변수에 함수를 할당하는방식 
+        var plus1 = function (a, b) {
+            return a + b;
+        }
+
+        var result1 = plus1(1, 5);
+        console.log("익명 함수기능 정의 방식:", result1);
+
+
+        //함수정의 case3: 화살표함수(화살표+익명함수):function예약어사용안함
+        var plus2 = (a, b) => {
+            return a + b;
+        }
+
+        console.log("화살표함수를 출력해보자1", plus2(10, 20));
+
+
+        //함수정의 case4: 화살표함수의 return구문까지도 없애보자{}를 생략하고 return구문도 생략가능
+        var plus3 = (a, b) => (a + b);
+        console.log("화살표함수를 출력해보자2", plus3(100, 200));
+
+
+
+
+        //함수정의 case5: 즉시실행함수
+        //함수정의와 값할당을 동시에 처리 
+        var plus4 = (function (a, b) {
+            return function () {
+                return a + b;
+            };
+        })(10, 20);
+        console.log("즉시실행함수 를 출력해보자", plus4());
+
+    </script>
+    
+</body>
+</html>
