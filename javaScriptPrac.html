@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Study Examples</title>
+</head>
+<body>
+
+    <h1>JavaScript Study Examples</h1>
+
+    <script>
+        console.log("웹브라우저 개발자도구 콘솔 출력 예시코드입니다.");
+
+        // 변수 선언
+        var name = "John";
+        let age = 30;
+        const city = "New York";
+        console.log("Variables:", name, age, city);
+
+        // 조건문
+        if (age > 18) {
+            console.log(name + " is an adult.");
+        } else {
+            console.log(name + " is not an adult.");
+        }
+
+        // 반복문
+        console.log("For loop:");
+        for (let i = 0; i < 5; i++) {
+            console.log("i =", i);
+        }
+
+        // 객체
+        let person = {
+            name: "Alice",
+            age: 25,
+            city: "Los Angeles"
+        };
+        console.log("Object:", person);
+        console.log("Person's name:", person.name);
+
+        // 배열
+        let numbers = [1, 2, 3, 4, 5];
+        console.log("Array:", numbers);
+        console.log("First number in array:", numbers[0]);
+
+        // 함수 정의
+        function add(a, b) {
+            return a + b;
+        }
+        console.log("Function result:", add(2, 3));
+
+        // 화살표 함수
+        const multiply = (a, b) => a * b;
+        console.log("Arrow function result:", multiply(3, 4));
+
+        // 즉시 실행 함수
+        (function () {
+            console.log("Immediately Invoked Function Expression (IIFE)");
+        })();
+
+        // 배열의 고차 함수 (forEach, map, filter, reduce)
+        console.log("Array higher-order functions:");
+
+        // forEach
+        numbers.forEach(num => console.log("forEach:", num));
+
+        // map
+        let squared = numbers.map(num => num * num);
+        console.log("map:", squared);
+
+        // filter
+        let evenNumbers = numbers.filter(num => num % 2 === 0);
+        console.log("filter:", evenNumbers);
+
+        // reduce
+        let sum = numbers.reduce((acc, num) => acc + num, 0);
+        console.log("reduce:", sum);
+
+        // Promise 예제
+        console.log("Promise example:");
+
+        let promise = new Promise((resolve, reject) => {
+            let success = true;
+            if (success) {
+                resolve("Promise resolved successfully.");
+            } else {
+                reject("Promise rejected.");
+            }
+        });
+
+        promise.then(message => {
+            console.log(message);
+        }).catch(error => {
+            console.log(error);
+        });
+
+        // async/await 예제
+        console.log("async/await example:");
+
+        async function asyncExample() {
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => resolve("Async function resolved."), 1000);
+            });
+
+            let result = await promise;
+            console.log(result);
+        }
+
+        asyncExample();
+
+    </script>
+    
+</body>
+</html>
