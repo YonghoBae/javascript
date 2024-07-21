@@ -8,7 +8,11 @@
 <body>
     <h1>배열/객체 비구조화(구조분해) 할당 문법</h1>
     <script>
+        //예시1)기존 문법을 통한 배열내 값을 추출하는 방법
+        //문자열 배열을 정의하고 문자열 배열의 기본값을 할당하고 배열을 books란 상수에 할당
         const books = ['React','Vue','Angular','Svelt','Jquery'];
+
+        //배열내 원하는 값을 추출하기위해 배열내 인덱스(0부터시작)를 이용해 개별값을 추출하여 개발변수에 저장하는 전통적인 방식 
         var book1 = books[0];
         var book2 = books[1];
         var book3 = books[2];
@@ -16,18 +20,24 @@
 
         console.log("기본방식으로 배열에서 추출한 값:", book1, book2, book3);
 
+        //예시2)구조분해 문법을 통한 배열내 값을 추출하는 방법
+        //배열값 추출 구조분해 문법 기초형식 : let/const [변수명,상수명] = [배열값];
         let [book01, book02, book03] = books;
         console.log("비구조화 할당방식으로 기존 배열에서 추출한 값:", book01, book02,book03);
 
         const [book4, book5] = books;
         console.log("비구조화 할당방식으로 배열에서 추출한 값", book4, book5);
 
+        //구조분해 문법을 통한 첫번째값을 추출 변수에 할당하고 나머지값을 추가변수에 배열로 할당하기
         let [book6, ...extraBooks] = ['자바', '닷넷', '파이썬', 'PHP', '노드'];
         console.log("비구조화 할당방식으로 배열에서 나머지 값 배열로 추출하기:", book6, extraBooks);
 
+        //비구조화 할당 추가 예시
         const [book7, book8, book9, book10, book11, book12 = '데이터베이스'] = ['자바', '닷넷', '파이썬', 'PHP', '노드'];
         console.log("비구조화 할당방식의 배열값 상수출력예시3 :", book7, book8, book9, book10, book11, book12);
     
+        //예시3)자바스크립트 객체 구조 정의 및 값 할당하고 값을 추출하는 전통적인 방식
+        //자바스크립트 객체 정의 기초 문법 : const(let) 객체상수(변수)명 = {객체구조정의-속성및함수};
         const techTrend = {
             front: 'ReactNext.js',
             backend: 'NodeNest.js',
@@ -37,12 +47,16 @@
             infra: 'AWS'
         };
 
+        //기존 방식으로 객체의 속성 값을 추출
         let frontTech = techTrend.front;
         let backendTech = techTrend.backend;
         let serverTech = techTrend.server;
 
         console.log("기존 방식으로 추출한 객체내 개별 속성 변수값:", frontTech, backendTech, serverTech);
     
+        //예시4)구조분해 문법을 통한 객체내 속성값을 추출하여 변수/상수에 할당하는 예시
+        //비구조화된 방식으로 객체의 속성값을 추출해보자.
+        //배열값 추출 구조분해 문법 기초형식 : let/const [변수명,상수명] = [배열값];
         const {front, backend, server, getAuthor} = {
             front: 'ReactNext.js',
             backend: 'NodeNest.js',
